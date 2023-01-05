@@ -3,12 +3,18 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Game{
+    
     public static String n;
+    
+    // Chances of player
     public static int count = 5;
+    
+    // Generate random number
     public  int comp = (int)(Math.random() * 10);
 
     Game() {
 
+        
         JFrame f0 = new JFrame();
         f0.setBounds(500, 250, 200, 150);
         f0.setLayout(null);
@@ -21,7 +27,7 @@ public class Game{
         f.setResizable(false);
         f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
 
-        // FRAME f0
+        // FRAME for name
         JLabel name = new JLabel("Enter your name");
         name.setBounds(40, 10, 100, 20);
         f0.add(name);
@@ -37,13 +43,13 @@ public class Game{
         f0.setVisible(true);
 
         // Main Frame Coponents
-
         JLabel wel = new JLabel();
         wel.setBounds(10, 10, 150, 20);
         wel.setForeground(Color.WHITE);
         wel.setFont(new Font("ARIAL", Font.BOLD, 15));
         f.add(wel);
 
+        // It displays how many chances left to the player
         JLabel C_label = new JLabel("Chance Left : ");
         C_label.setBounds(260, 10, 150, 20);
         C_label.setForeground(Color.WHITE);
@@ -57,17 +63,20 @@ public class Game{
         c_left.setText(String.valueOf(count));
         f.add(c_left);
 
+        // You can edit if according to you
         JLabel desc = new JLabel("<HTML>Choose a number between 1 to 10 </HTML>");
         desc.setBounds(50, 130, 300, 200);
         desc.setForeground(Color.WHITE);
         desc.setFont(new Font("ARIAL", Font.BOLD, 35));
         f.add(desc);
 
+        // User input textfield
         JTextField user_t = new JTextField();
         user_t.setBounds(100, 450, 200, 30);
         user_t.setFont(new Font("ARIAL", Font.BOLD, 20));
         f.add(user_t);
 
+        // Enter Button
         ImageIcon enter_img = new ImageIcon("Images/enter.png");
         JButton enter = new JButton(enter_img);
         enter.setBounds(150, 500, 100, 30);
